@@ -7,16 +7,15 @@ use DBMS_project;
 
 -- Table AUTHORS --
 CREATE TABLE Authors (
-    author_id INT AUTO_INCREMENT PRIMARY KEY,
+    author_id VARCHAR(20) PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     biography TEXT,
     specialization VARCHAR(255)
 );
-
 -- Table PUBLISHERS --
 CREATE TABLE Publishers (
-    publisher_id INT AUTO_INCREMENT PRIMARY KEY,
+    publisher_id VARCHAR(20) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     address TEXT NOT NULL,
     contact_number VARCHAR(15),
@@ -26,25 +25,27 @@ CREATE TABLE Publishers (
 
 -- Table COURSES --
 CREATE TABLE Courses (
-    course_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_id VARCHAR(20) PRIMARY KEY,
     course_name VARCHAR(255) NOT NULL,
     department VARCHAR(255) NOT NULL,
     academic_level ENUM('Undergraduate', 'Postgraduate','Research')
 );
 
+show tables;
+
 -- Table BOOKS --
 CREATE TABLE Books (
-    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_id VARCHAR(20) PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    author_id INT NOT NULL,
-    publisher_id INT NOT NULL,
+    author_id VARCHAR(20) NOT NULL,
+    publisher_id VARCHAR(20) NOT NULL,
     publication_year YEAR NOT NULL,
     genre VARCHAR(100),
     isbn VARCHAR(20) NOT NULL,
     copies_available INT NOT NULL,
     book_status ENUM('Available', 'Reserved', 'On Loan', 'In Maintenance'),
     academic_level ENUM('Undergraduate', 'Postgraduate', 'Research'),
-    course_association INT, -- Optional, references course_id
+    course_association VARCHAR(20), -- Optional, references course_id
     FOREIGN KEY (author_id) REFERENCES Authors(author_id),
     FOREIGN KEY (publisher_id) REFERENCES Publishers(publisher_id),
     FOREIGN KEY (course_association) REFERENCES Courses(course_id)
@@ -52,7 +53,7 @@ CREATE TABLE Books (
 
 -- Table MEMEBERS --
 CREATE TABLE Members (
-    member_id INT AUTO_INCREMENT PRIMARY KEY,
+    member_id VARCHAR(20) PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     address TEXT,
@@ -67,9 +68,8 @@ CREATE TABLE Members (
     -- FOREIGN KEY (department_id) REFERENCES Departments(department_id)
 );
 
--- Table LIBRARIANS --
 CREATE TABLE Librarians (
-    librarian_id INT AUTO_INCREMENT PRIMARY KEY,
+    librarian_id VARCHAR(20) PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     contact_number VARCHAR(15),
@@ -83,16 +83,16 @@ CREATE TABLE Librarians (
 
 -- Table TRANSACTIONS --
 CREATE TABLE Transactions (
-    transaction_id INT AUTO_INCREMENT PRIMARY KEY,
-    member_id INT NOT NULL,
-    book_id INT NOT NULL,
+    transaction_id VARCHAR(20) PRIMARY KEY,
+    member_id VARCHAR(20) NOT NULL,
+    book_id VARCHAR(20) NOT NULL,
     issue_date DATE NOT NULL,
     due_date DATE NOT NULL,
     return_date DATE,
     transaction_type ENUM('Issue', 'Return') NOT NULL,
     fine_amount DECIMAL(10, 2) DEFAULT 0.00,
     status ENUM('Returned', 'Pending') NOT NULL,
-    librarian_id INT NOT NULL,
+    librarian_id VARCHAR(20) NOT NULL,
     FOREIGN KEY (member_id) REFERENCES Members(member_id),
     FOREIGN KEY (book_id) REFERENCES Books(book_id),
     FOREIGN KEY (librarian_id) REFERENCES Librarians(librarian_id)
@@ -100,15 +100,15 @@ CREATE TABLE Transactions (
 
 -- Table BOOK CATEGORY --
 CREATE TABLE Book_Categories (
-    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    category_id VARCHAR(20) PRIMARY KEY,
     category_name VARCHAR(255) NOT NULL,
     academic_subject VARCHAR(255) NOT NULL
 );
 
 -- Table BOOK CATEGORY ASSIGNMENT --
 CREATE TABLE Book_Category_Assignment (
-    book_id INT NOT NULL,
-    category_id INT NOT NULL,
+    book_id VARCHAR(20) NOT NULL,
+    category_id VARCHAR(20) NOT NULL,
     PRIMARY KEY (book_id, category_id),
     FOREIGN KEY (book_id) REFERENCES Books(book_id),
     FOREIGN KEY (category_id) REFERENCES Book_Categories(category_id)
@@ -116,12 +116,12 @@ CREATE TABLE Book_Category_Assignment (
 
 -- Table PURCHASE HISTORY --
 CREATE TABLE Purchase_History (
-    purchase_id INT AUTO_INCREMENT PRIMARY KEY,
-    member_id INT NOT NULL,
-    book_id INT NOT NULL,
+    purchase_id VARCHAR(20) PRIMARY KEY,
+    member_id VARCHAR(20) NOT NULL,
+    book_id VARCHAR(20) NOT NULL,
     purchase_date DATE NOT NULL,
     quantity INT NOT NULL,
-    purchased_for_course INT, -- Optional reference to course_id
+    purchased_for_course VARCHAR(20), -- Optional reference to course_id
     FOREIGN KEY (member_id) REFERENCES Members(member_id),
     FOREIGN KEY (book_id) REFERENCES Books(book_id),
     FOREIGN KEY (purchased_for_course) REFERENCES Courses(course_id)
