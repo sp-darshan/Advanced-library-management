@@ -10,9 +10,10 @@ CREATE TABLE Authors (
     author_id VARCHAR(20) PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
-    biography TEXT,
     specialization VARCHAR(255)
 );
+
+
 -- Table PUBLISHERS --
 CREATE TABLE Publishers (
     publisher_id VARCHAR(20) PRIMARY KEY,
@@ -60,7 +61,6 @@ CREATE TABLE Members (
     phone_number VARCHAR(15),
     email VARCHAR(255),
     membership_date DATE NOT NULL,
-    membership_status ENUM('Active', 'Suspended'),
     member_type ENUM('Student', 'Faculty', 'Staff'),
     department_id INT, -- Optional, for Faculty/Staff members
     student_id_number VARCHAR(50), -- Optional, for student members
