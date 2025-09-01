@@ -1,0 +1,96 @@
+/* Auth Container */
+.auth-container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+}
+
+/* Auth Form with Glassmorphism */
+.auth-form1 {
+  background: rgba(255, 255, 255, 0.1); /* White with transparency */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Adjust the width of the form */
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for the frosted effect */
+}
+
+/* Close Button */
+.close-btn1 {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Form Title */
+.auth-form1 h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Form Input Fields */
+input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.2); /* Light background to enhance transparency */
+  color: #fff;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Error Message */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Register Link Styling */
+.toggle-btn {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.toggle-btn a {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.toggle-btn a:hover {
+  color: #0056b3;
+}

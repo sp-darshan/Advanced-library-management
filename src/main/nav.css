@@ -1,0 +1,89 @@
+/* Navbar Container */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    width: 100%; /* Ensures navbar takes full width */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+   
+  }
+  
+  .brand {
+    color: #fff;
+    padding: 0;
+    font-size: 24px;
+    margin-right: 290px;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+  }
+  
+  .profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .profile-email {
+    font-size: 14px;
+    color: #bbb;
+  }
+  
+  button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%; /* Ensure it takes full width on smaller screens */
+    }
+  
+    .brand h2 {
+      margin-bottom: 10px;
+    }
+  
+    .profile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .profile-name,
+    .profile-email {
+      text-align: left;
+    }
+  }
+  

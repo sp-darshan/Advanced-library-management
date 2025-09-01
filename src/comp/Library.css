@@ -1,0 +1,38 @@
+.library-section {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .book-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .book-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #007bff;
+  }
+  
+  .book-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .no-books {
+    font-size: 16px;
+    color: #999;
+    margin-top: 10px;
+  }
+  

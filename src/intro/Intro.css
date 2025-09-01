@@ -1,0 +1,15 @@
+.info-section {
+  padding: 50px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.info-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.info-section p {
+  font-size: 1.2rem;
+  color: #555;
+}

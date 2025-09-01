@@ -1,14 +1,14 @@
-/* Execute the below before using
-create database DBMS_project;
+-- Execute the below before using
+-- create database DBMS_project;
 use DBMS_project;
-*/
+
 
 -- drop table authors,book_categories,book_category_assignment,publishers,courses,books,librarians,members,purchase_history,transactions;
 
 -- Table AUTHORS --
 CREATE TABLE Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each author
-    first_name VARCHAR(100) NOT NULL, -- First name of the author
+    first_name VARCHAR(100) NOT NULL, -- First name of the authorss
     last_name VARCHAR(100) NOT NULL, -- Last name of the author
     biography TEXT, -- Brief biography of the author
     specialization VARCHAR(255) -- Subject area of expertise (e.g., Computer Science, Literature)

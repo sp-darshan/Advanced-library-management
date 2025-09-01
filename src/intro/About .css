@@ -1,0 +1,16 @@
+.alto {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+.alto h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+.alto p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
